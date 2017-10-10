@@ -152,3 +152,8 @@ Response
   }
 ]
 ```
+
+
+
+## License
+[BSD 3-Clause](https://github.com/petronetto/echo-mongo-api/blob/master/LICENSE)
