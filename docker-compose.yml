@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  app:
+    container_name: goapp
+    build: .
+    volumes:
+      - .:/go/src/app
+    ports:
+      - 1323:1323
+  mongo:
+    container_name: mongo
+    image: mongo:3.2.17
+    volumes:
+      - ./data:/data
+    ports:
+      - 27017:27017
+
+  # redis:
+  #   image: 'redis:3.0-alpine'
+  #   command: redis-server --requirepass devpassword
+  #   volumes:
+  #     - 'redis:/var/lib/redis/data'
+  #   ports:
+  #     - '6379:6379'
