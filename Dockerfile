@@ -7,12 +7,10 @@ RUN mkdir -p /go/src/github.com/petronetto/echo-mongo-api
 WORKDIR /go/src/github.com/petronetto/echo-mongo-api
 
 # copies the Gopkg.toml and Gopkg.lock to WORKDIR
-# COPY Gopkg.toml Gopkg.lock ./
 COPY ./ ./
 
 # install the dependencies without checking for go code
 RUN dep ensure -vendor-only
-
 
 # Build my app
 RUN go build -o /app/server .
